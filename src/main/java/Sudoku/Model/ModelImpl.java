@@ -21,7 +21,6 @@ public class ModelImpl implements Model {
         activeModelObservers = new ArrayList<>();
         localPuzzles = new HashMap();
         currentPuzzle = puzzleLibrary.getPuzzle(currentPuzzleIndex);
-        createLocalPuzzles();
     }
 
     private void createLocalPuzzles() {
@@ -35,7 +34,7 @@ public class ModelImpl implements Model {
     }
 
     @Override
-    public void setActivePuzzle(int index) {
+    public void setActivePuzzleIndex(int index) {
         if (index < 0 || index >= puzzleLibrary.size()) {
             throw new IndexOutOfBoundsException();
         }
@@ -57,15 +56,9 @@ public class ModelImpl implements Model {
     }
 
     @Override
-    public int getClueValue(int r, int c) {
+    public int getCellValue(int r, int c) {
         verifyParameters(r, c);
-        return currentPuzzle.getClueValue(r, c);
-    }
-
-    @Override
-    public int getOpenValue(int r, int c) {
-        verifyParameters(r, c);
-        return currentPuzzle.getOpenValue(r, c);
+        return currentPuzzle.getCellValue(r, c);
     }
 
     @Override
@@ -77,12 +70,13 @@ public class ModelImpl implements Model {
     @Override
     public boolean isEmpty(int r, int c) {
         verifyParameters(r, c);
-        return currentPuzzle.getOpenValue(r, c) == 0;
+        return currentPuzzle.getCellValue(r, c) == 0;
     }
 
 
     private boolean is3x3solved(int q) {
         verifyParameters(q);
+        createLocalPuzzles();
         return localPuzzles.get(q).isSolved();
     }
 
@@ -90,11 +84,15 @@ public class ModelImpl implements Model {
         verifyParameters(r);
         Map<Integer, Integer> numbers = new HashMap<>();
         for (int i = 0; i < 9; i++) {
+            int value = currentPuzzle.getCellValue(r, i);
+            if (value == 0) {
+                return false;
+            }
             if (currentPuzzle.getCellType(r, i).equals(CellType.OPEN)) {
-                if (numbers.containsKey(currentPuzzle.getOpenValue(r, i))) {
+                if (numbers.containsKey(value)) {
                     return false;
                 } else {
-                    numbers.put(currentPuzzle.getOpenValue(r, i), 1);
+                    numbers.put(value, 1);
                 }
             }
         }
@@ -105,11 +103,15 @@ public class ModelImpl implements Model {
         verifyParameters(c);
         Map<Integer, Integer> numbers = new HashMap<>();
         for (int i = 0; i < 9; i++) {
+            int value = currentPuzzle.getCellValue(i, c);
+            if (value == 0) {
+                return false;
+            }
             if (currentPuzzle.getCellType(i, c).equals(CellType.OPEN)) {
-                if (numbers.containsKey(currentPuzzle.getOpenValue(i, c))) {
+                if (numbers.containsKey(value)) {
                     return false;
                 } else {
-                    numbers.put(currentPuzzle.getOpenValue(i, c), 1);
+                    numbers.put(value, 1);
                 }
             }
         }
@@ -140,6 +142,21 @@ public class ModelImpl implements Model {
     @Override
     public void resetPuzzle() {
         currentPuzzle.resetPuzzle();
+    }
+
+    @Override
+    public int getActivePuzzleIndex() {
+        return currentPuzzleIndex;
+    }
+
+    @Override
+    public Puzzle getActivePuzzle() {
+        return puzzleLibrary.getPuzzle(currentPuzzleIndex);
+    }
+
+    @Override
+    public int getTotalPuzzles() {
+        return puzzleLibrary.size();
     }
 
     private void verifyParameters(int r, int c, int number) {

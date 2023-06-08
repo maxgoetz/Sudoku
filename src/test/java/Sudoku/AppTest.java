@@ -28,7 +28,8 @@ public class AppTest {
         puzzleLibrary.addPuzzle(puzzle0);
         Model model = new ModelImpl(puzzleLibrary);
         model.setOpenValue(0, 4, 8);
-        assertTrue(model.getOpenValue(0, 4) == 8);
+        assertTrue(model.getCellValue(0, 4) == 8);
+        assertTrue(model.getCellValue(0, 5) == 0);
     }
 
     @Test
@@ -41,5 +42,17 @@ public class AppTest {
             model.setOpenValue(0, 0, 8);
             assertTrue(false);
         } catch (IllegalArgumentException e) {}
+    }
+
+    @Test
+    public void testSolve() {
+        Puzzle puzzle = new PuzzleImpl(SamplePuzzles.PUZZLE_0_ALMOST_SOLVED);
+        PuzzleLibrary puzzleLibrary = new PuzzleLibraryImpl();
+        puzzleLibrary.addPuzzle(puzzle);
+        Model model = new ModelImpl(puzzleLibrary);
+        assertFalse(model.isSolved());
+        model.setOpenValue(0, 0, 5);
+        assertTrue(model.getCellValue(0, 0) == 5);
+        assertTrue(model.isSolved());
     }
 }
