@@ -51,14 +51,11 @@ public class PuzzleImpl implements Puzzle {
     }
 
     @Override
-    public void resetPuzzle() {
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                if (getCellType(i, j) == CellType.OPEN) {
-                    board[i][j] = (0);
-                }
-            }
+    public void resetCell(int r, int c) {
+        if (getCellType(r, c) != CellType.OPEN) {
+            throw new IllegalArgumentException();
         }
+        board[r][c] = 0;
     }
 
     private void verifyLocationParameters(int r, int c) {
@@ -68,7 +65,7 @@ public class PuzzleImpl implements Puzzle {
     }
 
     private void verifyValueParameter(int number) {
-        if (number < 1 || number > 9) {
+        if (number < 0 || number > 9) {
             throw new IllegalArgumentException();
         }
     }

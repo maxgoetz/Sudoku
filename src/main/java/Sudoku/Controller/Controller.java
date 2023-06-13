@@ -7,8 +7,9 @@ public interface Controller {
     void clickNextPuzzle();
     void clickPrevPuzzle();
     void clickRandomPuzzle();
-    void clickResetPuzzle();
+    void clickResetCell(int r, int c);
     void changeCellValue(int r, int c, int number);
+    int getCellValue(int r, int c);
     boolean isClue(int r, int c);
     boolean isOpen(int r, int c);
     boolean isSolved();

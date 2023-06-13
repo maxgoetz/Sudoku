@@ -39,6 +39,7 @@ public class ModelImpl implements Model {
             throw new IndexOutOfBoundsException();
         }
         currentPuzzleIndex = index;
+        currentPuzzle = puzzleLibrary.getPuzzle(currentPuzzleIndex);
         notify(activeModelObservers);
     }
 
@@ -140,8 +141,8 @@ public class ModelImpl implements Model {
     }
 
     @Override
-    public void resetPuzzle() {
-        currentPuzzle.resetPuzzle();
+    public void resetCell(int r, int c) {
+        currentPuzzle.resetCell(r, c);
     }
 
     @Override
@@ -163,7 +164,7 @@ public class ModelImpl implements Model {
         if (r < 0 || r > 8 || c < 0 || c > 8) {
             throw new IllegalArgumentException();
         }
-        if (number > 9 || number < 1) {
+        if (number > 9 || number < 0) {
             throw new IllegalArgumentException();
         }
     }
@@ -175,38 +176,6 @@ public class ModelImpl implements Model {
     private void verifyParameters(int q) {
         verifyParameters(q, 1, 1);
     }
-
-//    private int findLocalBoard(int r, int c) {
-//        verifyParameters(r, c);
-//        //top row
-//        if (r < 2) {
-//            if (c < 2) {
-//                return 0;
-//            } else if (c < 5) {
-//                return 1;
-//            } else {
-//                return 2;
-//            }
-//        //middle row
-//        } else if (r < 5) {
-//            if (c < 2) {
-//                return 3;
-//            } else if (c < 5) {
-//                return 4;
-//            } else {
-//                return 5;
-//            }
-//        //bottom row
-//        } else {
-//            if (c < 2) {
-//                return 6;
-//            } else if (c < 5) {
-//                return 7;
-//            } else {
-//                return 8;
-//            }
-//        }
-//    }
 
     private void notify(List<ModelObserver> modelObservers) {
         for (ModelObserver observer : modelObservers) {

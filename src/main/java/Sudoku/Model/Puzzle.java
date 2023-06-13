@@ -5,5 +5,5 @@ public interface Puzzle {
     int getCellValue(int r, int c);
     LocalPuzzle getLocalPuzzle(int r, int c);
     void setOpenValue(int r, int c, int number);
-    void resetPuzzle();
+    void resetCell(int r, int c);
 }

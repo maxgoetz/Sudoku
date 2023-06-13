@@ -12,6 +12,9 @@ public class InitialPuzzles {
         if (puzzleList == null) {
             puzzleList = new PuzzleLibraryImpl();
             puzzleList.addPuzzle(new PuzzleImpl(SamplePuzzles.PUZZLE_0));
+            puzzleList.addPuzzle((new PuzzleImpl(SamplePuzzles.PUZZLE_0_INVERT)));
+            puzzleList.addPuzzle((new PuzzleImpl(SamplePuzzles.PUZZLE_0_SOLVED)));
+            puzzleList.addPuzzle((new PuzzleImpl(SamplePuzzles.PUZZLE_0_ALMOST_SOLVED)));
         }
         return puzzleList;
     }

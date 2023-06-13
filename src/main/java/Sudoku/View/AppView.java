@@ -6,6 +6,9 @@ import Sudoku.Model.Model;
 import Sudoku.Model.ModelObserver;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -20,27 +23,27 @@ public class AppView implements ModelObserver {
     }
 
     public Parent render() {
-        VBox layout = new VBox();
+        BorderPane layout = new BorderPane();
 
 //        // start message view
-//        MessageView messageView = new MessageView(_controller);
-//        layout.getChildren().add(messageView.render());
+        MessageView messageView = new MessageView(controller);
+        layout.setTop(messageView.render());
 //
 //        // current puzzle message view
 //        CurrentPuzzleMessageView currentPuzzleMessageView = new CurrentPuzzleMessageView(_controller);
 //        layout.getChildren().add(currentPuzzleMessageView.render());
 //
 //        // Is Winner view
-//        IsWinnerMessageView isWinner = new IsWinnerMessageView(_controller);
-//        layout.getChildren().add(isWinner.render());
-//
+        IsSolvedView isSolved = new IsSolvedView(controller);
+        layout.setRight(isSolved.render());
+
 //        // control view
-//        ControlView controlView = new ControlView(_controller);
-//        layout.getChildren().add(controlView.render());
+        ControlView controlView = new ControlView(controller);
+        layout.setLeft(controlView.render());
 //
 //        // puzzle view
-//        PuzzleView puzzleView = new PuzzleView(_controller);
-//        layout.getChildren().add(puzzleView.render());
+        PuzzleView puzzleView = new PuzzleView(controller);
+        layout.setCenter(puzzleView.render());
 
         return layout;
     }

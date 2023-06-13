@@ -41,13 +41,20 @@ public class ControllerImpl implements Controller {
     }
 
     @Override
-    public void clickResetPuzzle() {
-        model.resetPuzzle();
+    public void clickResetCell(int r, int c) {
+        model.resetCell(r, c);
     }
 
     @Override
     public void changeCellValue(int r, int c, int number) {
-        model.setOpenValue(r, c, number);
+        try {
+            model.setOpenValue(r, c, number);
+        } catch (IllegalArgumentException e) {}
+    }
+
+    @Override
+    public int getCellValue(int r, int c) {
+        return model.getCellValue(r, c);
     }
 
     @Override

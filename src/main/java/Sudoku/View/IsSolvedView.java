@@ -7,20 +7,24 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 
-public class MessageView implements FXComponent {
+public class IsSolvedView implements FXComponent {
     private final Controller controller;
     private HBox layout;
 
-    public MessageView(Controller controller) {
+    public IsSolvedView(Controller controller) {
         this.controller = controller;
     }
 
     @Override
     public Parent render() {
         layout = new HBox();
-        Label startMessage = new Label("Welcome to Sudoku");
-        startMessage.setFont(new Font(20));
-        layout.getChildren().add(startMessage);
+        Label solvedMessage = new Label("You solved the puzzle!");
+        solvedMessage.setVisible(false);
+        solvedMessage.setFont(new Font(30));
+        if (controller.isSolved()) {
+            solvedMessage.setVisible(true);
+        }
+        layout.getChildren().add(solvedMessage);
         layout.setAlignment(Pos.CENTER);
 
         return layout;

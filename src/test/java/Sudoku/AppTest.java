@@ -54,5 +54,8 @@ public class AppTest {
         model.setOpenValue(0, 0, 5);
         assertTrue(model.getCellValue(0, 0) == 5);
         assertTrue(model.isSolved());
+        System.out.println(model.getCellValue(0, 0));
+        model.setOpenValue(0, 0, 9);
+        System.out.println(model.getCellValue(0, 0));
     }
 }
