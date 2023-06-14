@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="163142d6-3302-4460-8d4c-066a203278b2" name="Changes" comment="lots of work on sudoku">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/ControlView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/IsSolvedView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/PuzzleView.java" afterDir="false" />
+    <list default="true" id="163142d6-3302-4460-8d4c-066a203278b2" name="Changes" comment="Finished functionality. Working on UI and code legibility">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/Controller/ControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/Controller/ControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/Model/ModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/Model/ModelImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/Model/Puzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/Model/Puzzle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/Model/LocalPuzzleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/Model/LocalPuzzleImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/Model/PuzzleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/Model/PuzzleImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/SamplePuzzles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/SamplePuzzles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/AppLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/AppLauncher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/AppView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/AppView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/InitialPuzzles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/InitialPuzzles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/ControlView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/ControlView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/IsSolvedView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/IsSolvedView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/MessageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/MessageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sudoku/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sudoku/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/PuzzleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/PuzzleView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686236738469</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Finished functionality. Working on UI and code legibility">
+      <created>1686697355402</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686697355403</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,7 +196,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lots of work on sudoku" />
-    <option name="LAST_COMMIT_MESSAGE" value="lots of work on sudoku" />
+    <MESSAGE value="Finished functionality. Working on UI and code legibility" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished functionality. Working on UI and code legibility" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -7,6 +7,7 @@ import Sudoku.Controller.ControllerImpl;
 import Sudoku.Controller.Controller;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -26,6 +27,7 @@ public class AppLauncher extends Application {
         AppView view = new AppView(controller, stage);
 
         Scene scene = new Scene(view.render());
+
         stage.setScene(scene);
 
         model.addObserver(

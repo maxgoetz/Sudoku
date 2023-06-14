@@ -18,19 +18,24 @@ public class LocalPuzzleImpl implements LocalPuzzle {
     public boolean isSolved() {
         Map<Integer, Integer> cellMap = new HashMap<>();
         for (int i = 0; i < 9; i++) {
-            int cellValue = cells[i];
-            if (cellValue > 10) {
-                cellValue -= 10;
-            }
+            int cellValue = convertCellValue(cells[i]);
             if (cellValue == 0) {
                 return false;
             }
             if (cellMap.containsKey(cellValue)) {
+                //is not solved
                 cellMap.put(cellValue, cellMap.get(cellValue) + 1);
             } else {
                 cellMap.put(cellValue, 1);
             }
         }
         return cellMap.size() == 9;
+    }
+
+    private int convertCellValue(int cellValue) {
+        if (cellValue > 10) {
+            cellValue -= 10;
+        }
+        return cellValue;
     }
 }

@@ -18,7 +18,8 @@ public class IsSolvedView implements FXComponent {
     @Override
     public Parent render() {
         layout = new HBox();
-        Label solvedMessage = new Label("You solved the puzzle!");
+        layout.setMinSize(300, 300);
+        Label solvedMessage = new Label("You solved \nthe puzzle!");
         solvedMessage.setVisible(false);
         solvedMessage.setFont(new Font(30));
         if (controller.isSolved()) {

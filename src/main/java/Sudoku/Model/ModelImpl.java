@@ -25,10 +25,10 @@ public class ModelImpl implements Model {
 
     private void createLocalPuzzles() {
         Puzzle currentPuzzle = puzzleLibrary.getPuzzle(currentPuzzleIndex);
-        int throwaway = 0;
+        int index = 0;
         for (int i = 1; i < 8; i += 3) {
             for (int j = 1; j < 8; j += 3) {
-                localPuzzles.put(throwaway++, currentPuzzle.getLocalPuzzle(i, j));
+                localPuzzles.put(index++, currentPuzzle.getLocalPuzzle(i, j));
             }
         }
     }

@@ -19,7 +19,7 @@ public class MessageView implements FXComponent {
     public Parent render() {
         layout = new HBox();
         Label startMessage = new Label("Welcome to Sudoku");
-        startMessage.setFont(new Font(20));
+        startMessage.setFont(new Font("Verdana", 50));
         layout.getChildren().add(startMessage);
         layout.setAlignment(Pos.CENTER);
 

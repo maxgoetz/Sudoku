@@ -59,6 +59,7 @@ public class PuzzleView implements FXComponent {
     private void clickPuzzle(StackPane stackPane, int r, int c, int cellValue) {
         stackPane.setOnMouseClicked(event -> {
             if (lastClickedLocation[0] != null) {
+                //can't use createStackPane in lambda function
                 StackPane lastClickedPane = getStackPane(lastClickedLocation[0], lastClickedLocation[1]);
                 Text text = createText(lastClickedValue);
                 Rectangle cell = createCell(50, Color.WHITE);
@@ -72,11 +73,10 @@ public class PuzzleView implements FXComponent {
 
             Rectangle cell = createCell(50, Color.YELLOW);
             Text text = createText(cellValue);
+            stackPane.getChildren().set(1, cell);
             if ((cellValue) != 0) {
-                stackPane.getChildren().set(1, cell);
                 stackPane.getChildren().set(2, text);
             }
-            stackPane.getChildren().set(1, cell);
         });
     }
     private void createControlPanel() {
@@ -199,5 +199,27 @@ public class PuzzleView implements FXComponent {
 //        line.setStartX(0);
 //        line.setEndX(450);
 //        layout.getChildren().add(line);
+//    }
+
+//    private void addHorizontalLines(GridPane gridPane) {
+//        int numRows = 3;
+//        double rowHeight = 150;
+//        double gridWidth = 9 * 50;
+//
+//        for (int row = 1; row < numRows; row++) {
+//            Line line = new Line(0, row * rowHeight, gridWidth, row * rowHeight);
+//            gridPane.getChildren().add(line);
+//        }
+//    }
+
+//    private void addVerticalLines(GridPane gridPane) {
+//        int numColumns = /* number of columns in your grid */;
+//        double columnWidth = /* width of each column */;
+//        double gridHeight = /* height of the GridPane */;
+//
+//        for (int column = 1; column < numColumns; column++) {
+//            Line line = new Line(column * columnWidth, 0, column * columnWidth, gridHeight);
+//            gridPane.getChildren().add(line);
+//        }
 //    }
 }

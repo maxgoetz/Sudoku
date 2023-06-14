@@ -19,6 +19,7 @@ public class ControllerImpl implements Controller {
         try {
             model.setActivePuzzleIndex(model.getActivePuzzleIndex() + 1);
         } catch (IndexOutOfBoundsException e) {
+            //stop error from showing up in terminal when program running
         }
     }
 
@@ -27,6 +28,7 @@ public class ControllerImpl implements Controller {
         try {
             model.setActivePuzzleIndex(model.getActivePuzzleIndex() - 1);
         } catch (IndexOutOfBoundsException e) {
+            //stop error from showing up in terminal when program running
         }
     }
 
@@ -49,7 +51,9 @@ public class ControllerImpl implements Controller {
     public void changeCellValue(int r, int c, int number) {
         try {
             model.setOpenValue(r, c, number);
-        } catch (IllegalArgumentException e) {}
+        } catch (IllegalArgumentException e) {
+            //stop error from showing up in terminal when program running
+        }
     }
 
     @Override

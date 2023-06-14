@@ -6,11 +6,13 @@ import Sudoku.Model.Model;
 import Sudoku.Model.ModelObserver;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.net.MalformedURLException;
 
 public class AppView implements ModelObserver {
     private final Controller controller;
@@ -28,11 +30,7 @@ public class AppView implements ModelObserver {
 //        // start message view
         MessageView messageView = new MessageView(controller);
         layout.setTop(messageView.render());
-//
-//        // current puzzle message view
-//        CurrentPuzzleMessageView currentPuzzleMessageView = new CurrentPuzzleMessageView(_controller);
-//        layout.getChildren().add(currentPuzzleMessageView.render());
-//
+
 //        // Is Winner view
         IsSolvedView isSolved = new IsSolvedView(controller);
         layout.setRight(isSolved.render());

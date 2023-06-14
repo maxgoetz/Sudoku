@@ -7,6 +7,9 @@ public class PuzzleImpl implements Puzzle {
         if (board == null) {
             throw new IllegalArgumentException();
         }
+        if (board.length != 9 || board[0].length != 9) {
+            throw new IllegalArgumentException();
+        }
         this.board = board.clone();
     }
 
