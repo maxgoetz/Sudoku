@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 public class IsSolvedView implements FXComponent {
@@ -21,7 +22,8 @@ public class IsSolvedView implements FXComponent {
         layout.setMinSize(300, 300);
         Label solvedMessage = new Label("You solved \nthe puzzle!");
         solvedMessage.setVisible(false);
-        solvedMessage.setFont(new Font(30));
+        solvedMessage.setFont(new Font("Book Antiqua", 50));
+        solvedMessage.setTextFill(Color.BLACK);
         if (controller.isSolved()) {
             solvedMessage.setVisible(true);
         }

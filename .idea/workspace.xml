@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="163142d6-3302-4460-8d4c-066a203278b2" name="Changes" comment="Finished functionality. Working on UI and code legibility">
+    <list default="true" id="163142d6-3302-4460-8d4c-066a203278b2" name="Changes" comment="Cleaned up some code to make it more concise/legible. Worked on improving UI and UX.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/Controller/ControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/Controller/ControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/Model/LocalPuzzleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/Model/LocalPuzzleImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/Model/PuzzleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/Model/PuzzleImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/AppLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/AppLauncher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/AppView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/AppView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/ControlView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/ControlView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sudoku/View/IsSolvedView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sudoku/View/IsSolvedView.java" afterDir="false" />
@@ -180,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686697355403</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cleaned up some code to make it more concise/legible. Worked on improving UI and UX.">
+      <created>1686773802211</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686773802211</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,7 +200,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lots of work on sudoku" />
     <MESSAGE value="Finished functionality. Working on UI and code legibility" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished functionality. Working on UI and code legibility" />
+    <MESSAGE value="Cleaned up some code to make it more concise/legible. Worked on improving UI and UX." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up some code to make it more concise/legible. Worked on improving UI and UX." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

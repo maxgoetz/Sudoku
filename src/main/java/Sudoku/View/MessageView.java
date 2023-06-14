@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 public class MessageView implements FXComponent {
@@ -19,7 +20,8 @@ public class MessageView implements FXComponent {
     public Parent render() {
         layout = new HBox();
         Label startMessage = new Label("Welcome to Sudoku");
-        startMessage.setFont(new Font("Verdana", 50));
+        startMessage.setFont(new Font("Book Antiqua", 50));
+        startMessage.setTextFill(Color.BLACK);
         layout.getChildren().add(startMessage);
         layout.setAlignment(Pos.CENTER);
 

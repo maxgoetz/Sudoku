@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 
 public class ControlView implements FXComponent {
     private final Controller controller;
@@ -26,7 +27,7 @@ public class ControlView implements FXComponent {
         layout.setMinSize(300, 300);
 
         // next button
-        Button nextButton = new Button("Next Puzzle");
+        Button nextButton = createButton("Next Puzzle");
         nextButton.setOnAction(
                 (ActionEvent event) -> {
                     controller.clickNextPuzzle();
@@ -36,7 +37,7 @@ public class ControlView implements FXComponent {
         createBuffer();
 
         // previous button
-        Button previousButton = new Button("Previous Puzzle");
+        Button previousButton = createButton("Previous Puzzle");
         previousButton.setOnAction(
                 (ActionEvent event) -> {
                     controller.clickPrevPuzzle();
@@ -46,20 +47,28 @@ public class ControlView implements FXComponent {
         createBuffer();
 
         // random puzzle button
-        Button randomPuzzleButton = new Button("Random Puzzle");
+        Button randomPuzzleButton = createButton("Random Puzzle");
         randomPuzzleButton.setOnAction(
                 (ActionEvent event) -> {
                     controller.clickRandomPuzzle();
                 });
         layout.getChildren().add(randomPuzzleButton);
 
-        layout.setAlignment(Pos.CENTER);
+        layout.setAlignment(Pos.TOP_CENTER);
         return layout;
+    }
+
+    private Button createButton(String buttonName) {
+        Button button = new Button(buttonName);
+        button.setFont(Font.font("Book Antiqua", 15));
+        button.setMinSize(150, 80);
+        button.setStyle("-fx-background-color: lightblue;");
+        return button;
     }
 
     private void createBuffer() {
         VBox buffer = new VBox();
-        Rectangle cell = new Rectangle(100, 100);
+        Rectangle cell = new Rectangle(80, 80);
         cell.setFill(Color.WHITE);
         buffer.getChildren().add(cell);
         layout.getChildren().add(buffer);

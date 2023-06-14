@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -26,6 +27,7 @@ public class AppView implements ModelObserver {
 
     public Parent render() {
         BorderPane layout = new BorderPane();
+        layout.setStyle("-fx-background-color: white;");
 
 //        // start message view
         MessageView messageView = new MessageView(controller);
@@ -38,10 +40,14 @@ public class AppView implements ModelObserver {
 //        // control view
         ControlView controlView = new ControlView(controller);
         layout.setLeft(controlView.render());
-//
+
 //        // puzzle view
         PuzzleView puzzleView = new PuzzleView(controller);
         layout.setCenter(puzzleView.render());
+
+        Rectangle bottomBuffer = new Rectangle(60, 60);
+        bottomBuffer.setFill(Color.WHITE);
+        layout.setBottom(bottomBuffer);
 
         return layout;
     }

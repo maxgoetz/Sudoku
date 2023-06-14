@@ -84,14 +84,14 @@ public class PuzzleView implements FXComponent {
         int n = 1;
         for (int i = 1; i < 4; i++) {
             for (int j = 1; j < 4; j++) {
-                StackPane stackpane = createStackPane(80, n);
+                StackPane stackpane = createControlStackPane(80, n);
                 clickControl(stackpane, n);
                 controls.add(stackpane, i, j);
                 n++;
             }
         }
         //creating the special X pane for removing values from open cells
-        StackPane xPane = createStackPane(80, "X");
+        StackPane xPane = createXStackPane(80, "X");
         clickControl(xPane, 0);
         controls.add(xPane, 2, 4);
     }
@@ -108,9 +108,9 @@ public class PuzzleView implements FXComponent {
     private StackPane findPaneType(int r, int c, int cellValue, int blockSize) {
         StackPane stackPane;
         if (controller.isClue(r, c)) {
-            stackPane = createStackPane(Color.GRAY, Color.LIGHTGRAY, blockSize, cellValue);
+            stackPane = createStackPane(Color.BLACK, Color.LIGHTBLUE, blockSize, cellValue);
         } else {
-            stackPane = createStackPane(blockSize, cellValue);
+            stackPane = createStackPane(Color.BLACK, Color.WHITE, blockSize, cellValue);
             clickPuzzle(stackPane, r, c, cellValue);
         }
         return stackPane;
@@ -135,16 +135,21 @@ public class PuzzleView implements FXComponent {
         return stackpane;
     }
 
-    private StackPane createStackPane(int size, String string) {
+    private StackPane createXStackPane(int size, String string) {
         StackPane stackpane = new StackPane();
-        Rectangle border = createBorder(size, Color.GRAY);
-        Rectangle cell = createCell(size, Color.WHITE);
+        Rectangle border = createBorder(size, Color.BLACK);
+        Rectangle cell = createCell(size, Color.LIGHTBLUE);
         Text text = createText(string);
         stackpane.getChildren().addAll(border, cell, text);
         return stackpane;
     }
-    private StackPane createStackPane(int size, int value) {
-        return createStackPane(Color.GRAY, Color.WHITE, size, value);
+    private StackPane createControlStackPane(int size, int value) {
+        StackPane stackpane = new StackPane();
+        Rectangle border = createBorder(size, Color.BLACK);
+        Rectangle cell = createCell(size, Color.LIGHTBLUE);
+        Text text = createText(value);
+        stackpane.getChildren().addAll(border, cell, text);
+        return stackpane;
     }
 
     private Rectangle createBorder(int size, Color color) {
@@ -161,14 +166,14 @@ public class PuzzleView implements FXComponent {
 
     private Text createText(String string) {
         Text text = new Text(string);
-        text.setFont(Font.font("Verdana", 30));
+        text.setFont(Font.font("Book Antiqua", 30));
         return text;
     }
     private Text createText(int value) {
         String string = Integer.toString(value);
         string = (value == 0) ? "" : (string);
         Text text = new Text(string);
-        text.setFont(Font.font("Verdana", 30));
+        text.setFont(Font.font("Book Antiqua", 30));
         return text;
     }
 
